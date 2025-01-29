@@ -1,0 +1,141 @@
+body {
+    background-color: rgb(240, 242, 245);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh;
+    margin: 0; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 50px;
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 170px; 
+}
+
+.welcome-section {
+    text-align: left;
+    flex: 1;
+    max-width: 400px;
+}
+
+.logo {
+    color: rgb(24, 120, 243);
+    font-size: 75px;
+    margin: 0;
+}
+
+.description {
+    color: black;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.login-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 330px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: rgb(24, 120, 243);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.login-button:hover {
+    background-color: rgb(21, 100, 202);
+}
+
+.links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.forgot-password {
+    color: rgb(24, 120, 243);
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.create-account {
+    display: block;
+    background-color: rgb(54, 164, 32);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.create-account:hover {
+    background-color: rgb(44, 150, 30);
+    text-decoration: none;
+}
+
+.footer {
+    background-color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: grey;
+    width: 100%;
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    box-sizing: border-box;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: grey;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: grey;
+}

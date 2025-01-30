@@ -14,7 +14,6 @@ body {
   
 .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 800px;
@@ -36,7 +35,6 @@ body {
     background-color: black;
     border: 1px solid #434343;
     padding: 10px 20px;
-    transition: transform 0.2s;
     width: 300px;
     height: 380px;
     text-align: center;
@@ -259,4 +257,12 @@ button {
 .signup-link {
     color: rgb(0, 149, 246);
     text-decoration: none;
+}
+
+button:hover {
+    background-color: rgb(7, 132, 215);
+}
+
+.facebook-link:hover {
+    color: rgb(7, 132, 215);
 }

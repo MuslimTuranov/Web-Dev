@@ -64,4 +64,4 @@ function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
   
-  window.onload = loadTasks;
+window.onload = loadTasks;

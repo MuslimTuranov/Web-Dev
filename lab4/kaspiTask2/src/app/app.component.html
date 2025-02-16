@@ -1,0 +1,5 @@
+<div class="products-container">
+    <ng-container *ngFor="let product of products; trackBy: trackById">
+        <app-products [product]="product"></app-products>
+    </ng-container>
+</div>

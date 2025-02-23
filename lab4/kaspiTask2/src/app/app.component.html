@@ -1,5 +1,8 @@
-<div class="products-container">
-    <ng-container *ngFor="let product of products; trackBy: trackById">
-        <app-products [product]="product"></app-products>
-    </ng-container>
+<div class="categories">
+    <button *ngFor="let category of categories" [routerLink]="['/category', category]">
+      {{ category }}
+    </button>
 </div>
+  
+<router-outlet></router-outlet>
+  

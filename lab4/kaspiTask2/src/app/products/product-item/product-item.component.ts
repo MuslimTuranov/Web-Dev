@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../../interfaces/products.interface';
 
 @Component({
   selector: 'app-product-item',
@@ -8,8 +7,22 @@ import { Product } from '../../interfaces/products.interface';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent {
-  @Input() product!: Product;
-  @Output() remove = new EventEmitter<number>();
+  @Input() product: any;
   @Output() like = new EventEmitter<number>();
-}
+  @Output() remove = new EventEmitter<number>();
 
+  share(platform: string, product: any): void {
+    const productUrl = encodeURIComponent(product.link);
+    let shareUrl = '';
+
+    if (platform === 'whatsapp') {
+      shareUrl = `https://wa.me/?text=${productUrl}`;
+    } else if (platform === 'telegram') {
+      shareUrl = `https://t.me/share/url?url=${productUrl}`;
+    }
+
+    if (shareUrl) {
+      window.open(shareUrl, '_blank');
+    }
+  }
+}

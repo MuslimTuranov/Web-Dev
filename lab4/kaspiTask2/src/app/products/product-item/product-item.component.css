@@ -1,0 +1,111 @@
+.product-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 500px; 
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0;
+  }
+  
+  .product-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+  }
+  .product-info h3 {
+    margin: 0 0 0.5rem;
+    color: #333;
+    font-size: 1.2rem;
+  }
+  
+  .product-info p {
+    margin: 0.5rem 0;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .kaspi-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .kaspi-link:hover {
+    text-decoration: underline;
+  }
+  
+  .action-buttons {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+  }
+  
+  .action-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .like-button {
+    background-color: #ff4081;
+    color: white;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .share-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .share-button.telegram {
+    background-color: #0088cc;
+  }
+  
+  .share-button.whatsapp {
+    background-color: #25D366;
+  }
+  
+  .action-buttons button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  
+  .action-buttons button:active {
+    transform: scale(0.95);
+  }
+  
+  p[title="likes"] {
+    font-weight: bold;
+    color: #ff4081;
+    font-size: 1.1rem;
+  }

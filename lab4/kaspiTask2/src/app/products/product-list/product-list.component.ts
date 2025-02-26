@@ -4,6 +4,7 @@ import { Product } from '../../interfaces/products.interface';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { NgFor } from '@angular/common';
 
+
 @Component({
   selector: 'app-product-list',
   standalone: true,
@@ -121,14 +122,13 @@ export class ProductListComponent {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    console.log('✅ ProductListComponent загружен!'); // Проверяем, срабатывает ли ngOnInit()
   
     this.route.paramMap.subscribe(params => {
     this.category = params.get('categoryName');
-    console.log('Выбранная категория:', this.category); // Проверяем, передаётся ли параметр
+    console.log('Выбранная категория:', this.category); 
 
     this.products = this.allProducts.filter(p => p.category === this.category);
-    console.log('Найденные товары:', this.products); // Проверяем, фильтруются ли товары
+    console.log('Найденные товары:', this.products); 
     });
   }
 

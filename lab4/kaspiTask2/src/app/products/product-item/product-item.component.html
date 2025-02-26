@@ -1,14 +1,25 @@
 <div class="product-card">
-    <img class="product-image" [src]="product.imageUrl" [alt]="product.name" />
-    <div class="product-info">
-      <h3>{{ product.name }}</h3>
-      <p>{{ product.description }}</p>
-      <p>❤️ {{ product.likes }}</p>
-  
-      <div class="action-buttons">
-        <button class="like-button" (click)="like.emit(product.id)">❤️ Лайк</button>
-        <button class="delete-button" (click)="remove.emit(product.id)">🗑 Удалить</button>
-      </div>
+  <img class="product-image" [src]="product.imageUrl" [alt]="product.name" />
+  <div class="product-info">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>❤️ {{ product.likes }}</p>
+    <a class="kaspi-link" [href]="product.link" target="_blank">
+      Kaspi shop
+    </a>
+    <div class="action-buttons">
+      <button class="like-button" (click)="like.emit(product.id)">
+        ❤️ Like
+      </button>
+      <button class="delete-button" (click)="remove.emit(product.id)">
+        🗑 Delete
+      </button>
+      <button class="share-button whatsapp" (click)="share('whatsapp', product)">
+        Share in WhatsApp
+      </button>
+      <button class="share-button telegram" (click)="share('telegram', product)">
+        Share in Telegram
+      </button>
     </div>
+  </div>
 </div>
-  

@@ -1,6 +1,31 @@
-app-root {
-    display: block;
-    padding: 20px;
-    max-width: 100%;
-    margin: 0 auto;
-}
+.categories {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .categories button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .categories button:hover {
+    background-color: #1976D2;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .categories button:active {
+    transform: translateY(0);
+  }

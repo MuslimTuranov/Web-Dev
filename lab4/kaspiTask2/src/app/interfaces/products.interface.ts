@@ -7,5 +7,6 @@ export interface Product {
     link: string;
     category: string;
     likes: number;
+    isLiked: boolean;
   }
   

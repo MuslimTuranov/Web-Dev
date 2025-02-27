@@ -9,7 +9,7 @@
     </a>
     <div class="action-buttons">
       <button class="like-button" (click)="like.emit(product.id)">
-        ❤️ Like
+        {{ product.isLiked ? '💔 Unlike' : '❤️ Like' }} 
       </button>
       <button class="delete-button" (click)="remove.emit(product.id)">
         🗑 Delete

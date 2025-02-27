@@ -1,5 +1,5 @@
 <div class="products-container">
     <ng-container *ngFor="let product of products">
-      <app-product-item [product]="product" (remove)="removeProduct($event)" (like)="likeProduct($event)"></app-product-item>
+    <app-product-item (remove)="removeProduct($event)" (like)="likeProduct($event)" [product]="product"></app-product-item>
     </ng-container>
 </div>

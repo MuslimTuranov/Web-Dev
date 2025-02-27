@@ -26,6 +26,7 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/apple-iphone-16-pro-max-256gb-chernyi-123787551/?c=750000000',
       category: 'Smartphones',
       likes: 0,
+      isLiked: false,
     },
     {
       id: 2,
@@ -36,6 +37,8 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/samsung-galaxy-s24-ultra-5g-12-gb-256-gb-seryi-116043556/?c=750000000',
       category: 'Smartphones',
       likes: 0,
+      isLiked: false,
+
     },
     {
       id: 3,
@@ -46,6 +49,8 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/apple-iphone-16-128gb-chernyi-123713453/?c=750000000',
       category: 'Smartphones',
       likes: 0,
+      isLiked: false,
+
     },
     {
       id: 4,
@@ -56,6 +61,8 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/apple-macbook-air-13-2022-13-6-8-gb-ssd-256-gb-macos-mlxw3-105933794/?c=750000000',
       category: 'Laptops',
       likes: 0,
+      isLiked: false,
+
     },
     {
       id: 5,
@@ -66,6 +73,8 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/thunderobot-zero-ultra-xt-r15-15-6-32-gb-ssd-1000-gb-win-11-pro--117753657/?c=750000000',
       category: 'Laptops',
       likes: 0,
+      isLiked: false,
+
     },
     {
       id: 6,
@@ -76,6 +85,8 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/apple-watch-se-gps-gen-2-2024-s-m-40-mm-bezhevyi-129172890/?c=750000000',
       category: 'Accessories',
       likes: 0,
+      isLiked: false,
+
     },
     {
       id: 7,
@@ -86,6 +97,8 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/apple-airpods-4-active-noise-cancellation-belyi-124333921/?c=750000000',
       category: 'Accessories',
       likes: 0,
+      isLiked: false,
+
     },
     {
       id: 8,
@@ -96,6 +109,8 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/apple-airpods-max-chernyi-100950846/?c=750000000',
       category: 'Accessories',
       likes: 0,
+      isLiked: false,
+
     },
     {
       id: 9,
@@ -106,6 +121,8 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/rode-nt2-a-104024632/?c=750000000',
       category: 'Accessories',
       likes: 0,
+      isLiked: false,
+
     },
     {
       id: 10,
@@ -116,6 +133,8 @@ export class ProductListComponent {
       link: 'https://kaspi.kz/shop/p/divan-prjamoi-omar-obivka-veljur-80h180h95-sm-belyi-120655702/?c=750000000',
       category: 'Furniture',
       likes: 0,
+      isLiked: false,
+
     },
   ];
 
@@ -138,6 +157,9 @@ export class ProductListComponent {
 
   likeProduct(id: number) {
     const product = this.products.find(p => p.id === id);
-    if (product) product.likes++;
+    if (product) {
+      product.isLiked = !product.isLiked; 
+      product.likes += product.isLiked ? 1 : -1; 
+    }
   }
 }

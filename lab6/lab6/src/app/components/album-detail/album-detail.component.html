@@ -1,0 +1,13 @@
+<h2>Edit Album</h2>
+
+<label for="album-title">Title:</label>
+<input id="album-title" [(ngModel)]="album.title" />
+
+<button (click)="saveAlbum()" [disabled]="isSaving">
+  {{ isSaving ? 'Saving...' : 'Save' }}
+</button>
+
+<button (click)="goBack()">Return</button>
+
+<a [routerLink]="['/albums', album.id, 'photos']">Photos</a>
+

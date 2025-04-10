@@ -1,51 +1,86 @@
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
+from django.http import JsonResponse
 from .models import Company, Vacancy
-from .serializers import CompanySerializer, VacancySerializer
 
-@api_view(['GET'])
-def company_list(request):
+
+def CompaniesList(request):
     companies = Company.objects.all()
-    serializer = CompanySerializer(companies, many=True)
-    return Response(serializer.data)
+    data = []
+    for company in companies:
+        data.append({
+            'id': company.id,
+            'name': company.name,
+            'description': company.description,
+            'city': company.city,
+            'address': company.address
+        })
+    return JsonResponse(data, safe=False)
 
-@api_view(['GET'])
-def company_detail(request, id):
-    try:
-        company = Company.objects.get(id=id)
-    except Company.DoesNotExist:
-        return Response({'error': 'Company not found'}, status=status.HTTP_404_NOT_FOUND)
-    serializer = CompanySerializer(company)
-    return Response(serializer.data)
 
-@api_view(['GET'])
-def company_vacancies(request, id):
-    try:
-        company = Company.objects.get(id=id)
-    except Company.DoesNotExist:
-        return Response({'error': 'Company not found'}, status=status.HTTP_404_NOT_FOUND)
-    vacancies = company.vacancies.all()
-    serializer = VacancySerializer(vacancies, many=True)
-    return Response(serializer.data)
+def CompanyDetail(request, id):
+    company = Company.objects.get(id=id)
+    
+    data = {
+        'id': company.id,
+        'name': company.name,
+        'description': company.description,
+        'city': company.city,
+        'address': company.address
+    }
+    return JsonResponse(data)
 
-@api_view(['GET'])
-def vacancy_list(request):
+
+def CompanyVacancies(request, id):
+    company = Company.objects.get(id=id)
+    vacancies = Vacancy.objects.filter(company=company)
+
+    data = []
+    for vacancy in vacancies:
+        data.append({
+            'id': vacancy.id,
+            'name': vacancy.name,
+            'description': vacancy.description,
+            'salary': vacancy.salary
+        })
+    return JsonResponse(data, safe=False)
+
+
+def VacanciesList(request):
     vacancies = Vacancy.objects.all()
-    serializer = VacancySerializer(vacancies, many=True)
-    return Response(serializer.data)
+    data = []
+    for vacancy in vacancies:
+        data.append({
+            'id': vacancy.id,
+            'name': vacancy.name,
+            'description': vacancy.description,
+            'salary': vacancy.salary,
+            'company_id': vacancy.company.id
+        })
+    return JsonResponse(data, safe=False)
 
-@api_view(['GET'])
-def vacancy_detail(request, id):
-    try:
-        vacancy = Vacancy.objects.get(id=id)
-    except Vacancy.DoesNotExist:
-        return Response({'error': 'Vacancy not found'}, status=status.HTTP_404_NOT_FOUND)
-    serializer = VacancySerializer(vacancy)
-    return Response(serializer.data)
 
-@api_view(['GET'])
-def top_ten_vacancies(request):
+def VacancyDetail(request, id):
+    vacancy = Vacancy.objects.get(id=id)
+    
+    data = {
+        'id': vacancy.id,
+        'name': vacancy.name,
+        'description': vacancy.description,
+        'salary': vacancy.salary,
+        'company_id': vacancy.company.id
+    }
+    return JsonResponse(data)
+
+
+def TopTenVacancies(request):
     vacancies = Vacancy.objects.order_by('-salary')[:10]
-    serializer = VacancySerializer(vacancies, many=True)
-    return Response(serializer.data)
+    data = []
+    for vacancy in vacancies:
+        data.append({
+            'id': vacancy.id,
+            'name': vacancy.name,
+            'description': vacancy.description,
+            'salary': vacancy.salary,
+            'company_id': vacancy.company.id
+        })
+    return JsonResponse(data, safe=False)
+

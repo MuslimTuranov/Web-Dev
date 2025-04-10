@@ -69,4 +69,5 @@ def CategoryProductsList(request,id):
         })
         
     return JsonResponse(data, safe=False)
-    
+
+

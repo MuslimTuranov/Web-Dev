@@ -14,8 +14,8 @@ export class AlbumsService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  getAlbum(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  getAlbum(id: number){
+    return this.http.get<any>(`${this.apiUrl}/${id}`)
   }
 
   updateAlbum(id: number, album: any): Observable<any> {

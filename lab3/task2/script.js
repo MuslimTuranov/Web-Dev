@@ -46,7 +46,6 @@ function addTask() {
     if (inputBox.value.trim() !== "") {
       const li = createTaskElement(inputBox.value);
       taskList.appendChild(li);
-      inputBox.value = "";
       saveTasks();
     }
 }

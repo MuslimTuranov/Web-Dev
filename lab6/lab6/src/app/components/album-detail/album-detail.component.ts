@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { AlbumsService } from '../../services/albums.service';
 import { FormsModule } from '@angular/forms';
-import { ViewEncapsulation } from '@angular/core';
-
 
 
 @Component({
